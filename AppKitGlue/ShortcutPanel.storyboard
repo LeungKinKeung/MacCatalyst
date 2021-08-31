@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="tf9-k1-BFX">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="aao-Ab-zLX">
+            <objects>
+                <windowController id="tf9-k1-BFX" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="tkq-yf-81Y">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="320" y="343" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1129"/>
+                        <view key="contentView" id="5Bt-70-SrT">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="tf9-k1-BFX" id="Qol-Eg-rlg"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="xQR-U5-yeA" kind="relationship" relationship="window.shadowedContentViewController" id="pZ5-3p-LEX"/>
+                    </connections>
+                </windowController>
+                <customObject id="AWz-z6-q9q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="75"/>
+        </scene>
+        <!--Shortcut View Controller-->
+        <scene sceneID="dlr-cx-1vY">
+            <objects>
+                <viewController id="xQR-U5-yeA" customClass="ShortcutViewController" sceneMemberID="viewController">
+                    <view key="view" id="qpN-FA-wFe">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="FR1-Lb-Q6n" customClass="MASShortcutView">
+                                <rect key="frame" x="148" y="219" width="184" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="eku-Ye-rif"/>
+                                    <constraint firstAttribute="height" constant="31" id="foa-CT-lSy"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FR1-Lb-Q6n" firstAttribute="centerX" secondItem="qpN-FA-wFe" secondAttribute="centerX" id="BWU-7g-iuR"/>
+                            <constraint firstItem="FR1-Lb-Q6n" firstAttribute="top" secondItem="qpN-FA-wFe" secondAttribute="top" constant="20" symbolic="YES" id="C69-cx-RG0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shortcutView" destination="FR1-Lb-Q6n" id="vsx-If-d3h"/>
+                    </connections>
+                </viewController>
+                <customObject id="jkr-U3-K5t" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="466"/>
+        </scene>
+    </scenes>
+</document>
